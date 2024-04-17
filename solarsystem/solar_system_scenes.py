@@ -80,4 +80,4 @@ class SolarSystemScene(Scene):
         """播放背景音乐""" ""
         pygame.mixer.music.load(get_assets(configmap["bgm"]["sound"]))
         pygame.mixer.music.set_volume(configmap["bgm"]["sound_volume"])
-        # pygame.mixer.music.play(-1) 
+        pygame.mixer.music.play(-1) 

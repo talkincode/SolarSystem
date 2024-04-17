@@ -1,6 +1,6 @@
 import random
 import pygame
-from .common import Scene, Colors, get_assets, DISPLAY_WIDTH, DISPLAY_HEIGHT
+from .common import Scene, Colors, get_assets, DISPLAY_WIDTH, DISPLAY_HEIGHT, res_manager
 from .actors import Background, Star, ImageSprite, SuperProbe
 from .config import configmap
 
@@ -57,6 +57,8 @@ class SolarProbeScene(Scene):
                 if event.key == pygame.K_7:
                     self.probe = SuperProbe(self.earth.rect.centerx, self.earth.rect.centery, 1, self.sun)
                     self.probe_bodies.add(self.probe)
+                    sound = res_manager.load_sound("sounds/probe_launch.ogg")
+                    sound.play()
                     
 
     def update(self):
@@ -81,4 +83,4 @@ class SolarProbeScene(Scene):
         """播放背景音乐""" ""
         pygame.mixer.music.load(get_assets(configmap["bgm"]["sound"]))
         pygame.mixer.music.set_volume(configmap["bgm"]["sound_volume"])
-        # pygame.mixer.music.play(-1)
+        pygame.mixer.music.play(-1)

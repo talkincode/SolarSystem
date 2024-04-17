@@ -4,7 +4,7 @@ configmap = {
     "fullscreen": False,
     "bgm": {
         "sound": "sounds/bgm.ogg",
-        "sound_volume": 0.5,
+        "sound_volume": 0.3,
     },
     "background": {
         "images": ["images/background.webp"],
